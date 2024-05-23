@@ -8,4 +8,6 @@ module com.example.hqtqlsv {
 
     opens com.example.hqtqlsv to javafx.fxml;
     exports com.example.hqtqlsv;
+    exports com.example.hqtqlsv.Model;
+    opens com.example.hqtqlsv.Model to javafx.fxml;
 }
