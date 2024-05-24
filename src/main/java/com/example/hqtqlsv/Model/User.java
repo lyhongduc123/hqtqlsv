@@ -1,28 +1,11 @@
 package com.example.hqtqlsv.Model;
 
+import java.sql.Date;
+
 public abstract class User {
     private int id;
     private String userName;
     private String password;
-    private String ho;
-    private String ten;
-
-    public String getHo() {
-        return ho;
-    }
-
-    public void setHo(String ho) {
-        this.ho = ho;
-    }
-
-    public String getTen() {
-        return ten;
-    }
-
-    public void setTen(String ten) {
-        this.ten = ten;
-    }
-
     private Date createdAt;
     private Date updatedAt;
 
@@ -66,9 +49,6 @@ public abstract class User {
         this.updatedAt = updatedAt;
     }
 
-    public String getHoVaTen() {
-        return ho + " " + ten;
-    }
 
     public User(int id, String userName, String password) {
         this.id = id;

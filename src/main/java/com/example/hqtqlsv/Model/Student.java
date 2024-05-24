@@ -4,8 +4,11 @@ public class Student extends User {
     private int mssv;
     private boolean male;
     private String queQuan;
-
-    public Student(int id, String userName, String password) {
+    private String hoVaTen;
+    public Student(int id, String userName, String password, boolean male, String queQuan, String hoVaTen) {
         super(id, userName, password);
+        this.male = male;
+        this.queQuan = queQuan;
+        this.hoVaTen = hoVaTen;
     }
 }
