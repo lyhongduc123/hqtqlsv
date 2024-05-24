@@ -15,12 +15,8 @@ class AccountActivityTest {
     @Test
     void login() {
         assertEquals(AccountActivity.LOGIN_SUCCESS, AccountActivity.login("22020800", "123456Aa"));
-        assertEquals(AccountActivity.WRONG_PASSWORD, AccountActivity.login("22020800", ""));
-        assertEquals(AccountActivity.WRONG_PASSWORD,AccountActivity.login("22020800", "fadsfadsfas"));
+        assertEquals(AccountActivity.LOGIN_FAILED, AccountActivity.login("22020800", ""));
+        assertEquals(AccountActivity.LOGIN_FAILED,AccountActivity.login("22020800", "fadsfadsfas"));
         assertEquals(AccountActivity.USERNAME_NOT_EXIST, AccountActivity.login("3948392", "fadsfadsfas"));
-    }
-
-    @Test
-    void register() {
     }
 }
