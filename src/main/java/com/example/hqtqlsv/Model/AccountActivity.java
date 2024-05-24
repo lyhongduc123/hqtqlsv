@@ -36,13 +36,12 @@ public class AccountActivity {
         Statement stmt = null;
         try {
             stmt = DBConnection.getConnection().createStatement();
-            String query = "SELECT * FROM users WHERE username = " + inputUsername;
+            String query = "SELECT * FROM users WHERE username = " + '\'' + inputUsername + '\'' +
+                    "AND password = \'" + inputPassword + '\'' + ";";
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
-                if(inputPassword.equals(rs.getString("password"))) {
-                    System.out.println("login successfully");
-                    return LOGIN_SUCCESS;
-                }
+                System.out.println("login successfully");
+                return LOGIN_SUCCESS;
             }
             stmt.close();
             System.out.println("login failed");
