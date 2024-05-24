@@ -14,10 +14,11 @@ public class HelloController {
     @FXML
     private TextField usernameField;
 
+    @FXML
     void login() {
         int result = AccountActivity.login(usernameField.getText(), passwordField.getText());
         if (result == AccountActivity.LOGIN_SUCCESS) {
-
+            ViewFactory.getInstance().showWindow();
             return;
         }
         if (result == AccountActivity.LOGIN_FAILED) {

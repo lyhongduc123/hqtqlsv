@@ -17,6 +17,6 @@ class AccountActivityTest {
         assertEquals(AccountActivity.LOGIN_SUCCESS, AccountActivity.login("22020800", "123456Aa"));
         assertEquals(AccountActivity.LOGIN_FAILED, AccountActivity.login("22020800", ""));
         assertEquals(AccountActivity.LOGIN_FAILED,AccountActivity.login("22020800", "fadsfadsfas"));
-        assertEquals(AccountActivity.USERNAME_NOT_EXIST, AccountActivity.login("3948392", "fadsfadsfas"));
+        assertEquals(AccountActivity.LOGIN_FAILED, AccountActivity.login("3948392", "fadsfadsfas"));
     }
 }

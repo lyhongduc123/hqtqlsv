@@ -27,8 +27,8 @@ public class AccountActivity {
         return false;
     }
 
-    public static int login(String username, String password) {
-        if (username == null || username.length() == 0) {
+    public static int login(String inputUsername, String inputPassword) {
+        if (inputUsername == null || inputUsername.length() == 0) {
             System.out.println("login failed");
             return EMPTY_USERNAME;
         }
@@ -36,11 +36,13 @@ public class AccountActivity {
         Statement stmt = null;
         try {
             stmt = DBConnection.getConnection().createStatement();
-            String query = "SELECT * FROM users WHERE username = " + username + " AND password = " + password + ";";
+            String query = "SELECT * FROM users WHERE username = " + inputUsername;
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
-                System.out.println("login successfully");
-                return LOGIN_SUCCESS;
+                if(inputPassword.equals(rs.getString("password"))) {
+                    System.out.println("login successfully");
+                    return LOGIN_SUCCESS;
+                }
             }
             stmt.close();
             System.out.println("login failed");
