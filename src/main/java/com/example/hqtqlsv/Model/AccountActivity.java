@@ -53,10 +53,14 @@ public class AccountActivity {
         return STATEMENT_ERROR;
     }
 
-    public static boolean changeProfile(String username) {
+
+    //TODO change profile at mysql
+    public static boolean changeProfile(String username, String hoVaTen, String queQuan, boolean isMale) {
         return true;
     }
 
+
+    //TODO query for student's information in DB by username
     public static Student queryStudent(String username) {
         return new Student(1000, "bangvoip673", "bangvoip",
                 true,  "Nghe An", "To Huu Bang");

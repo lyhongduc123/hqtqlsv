@@ -22,6 +22,7 @@ public class HelloController {
     @FXML
     private TextField usernameField;
 
+    //TODO fix when completed query
     @FXML
     void login() {
         User.init(AccountActivity.queryStudent("testonly")); //just for test; delete later

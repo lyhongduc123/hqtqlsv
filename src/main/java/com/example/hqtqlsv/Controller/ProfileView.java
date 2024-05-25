@@ -37,7 +37,8 @@ public class ProfileView implements Initializable {
             queQuan.setEditable(true);
             changePrfBtn.setText("Lưu");
         } else {
-            boolean success = AccountActivity.changeProfile(User.getInstance().getUserName());
+            boolean success = AccountActivity.changeProfile(User.getInstance().getUserName(), hoVaTen.getText()
+            ,  queQuan.getText(), false ); //TODO fix sex
             if (success ==  false) {
                 Student student = (Student) User.getInstance();
                 hoVaTen.setText(student.getHoVaTen());
