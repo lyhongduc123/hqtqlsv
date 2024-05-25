@@ -15,6 +15,9 @@ public class ViewFactory {
     private final StringProperty currentSelection;
     public static final String LOGIN_VIEW = "loginView";
     public static final String MAIN_VIEW = "mainView";
+    public static final String PROFILE_VIEW = "profileView";
+
+    private AnchorPane profileView;
 
     private ViewFactory() {
         stage.setResizable(false);
@@ -30,6 +33,13 @@ public class ViewFactory {
     private final Stage stage = new Stage();
     private Scene scene;
 
+    public StringProperty getCurrentSelection() {
+        return currentSelection;
+    }
+
+    public StringProperty currentSelectionProperty() {
+        return currentSelection;
+    }
 
     private Scene createStage(FXMLLoader loader) {
         Scene scene = null;
@@ -57,5 +67,16 @@ public class ViewFactory {
 
     public void showWindow() {
         scene = createStage(new FXMLLoader(getClass().getResource("main-view.fxml")));
+    }
+
+    public AnchorPane getProfileView() {
+        if (profileView == null) {
+            try {
+                profileView = FXMLLoader.load(getClass().getResource("profile-view.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return profileView;
     }
 }

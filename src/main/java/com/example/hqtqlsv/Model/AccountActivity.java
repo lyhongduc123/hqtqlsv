@@ -41,6 +41,7 @@ public class AccountActivity {
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
                 System.out.println("login successfully");
+                User.init(queryStudent(rs.getString("username")));
                 return LOGIN_SUCCESS;
             }
             stmt.close();
@@ -50,5 +51,14 @@ public class AccountActivity {
             System.err.println(e.getMessage());
         }
         return STATEMENT_ERROR;
+    }
+
+    public static boolean changeProfile(String username) {
+        return true;
+    }
+
+    public static Student queryStudent(String username) {
+        return new Student(1000, "bangvoip673", "bangvoip",
+                true,  "Nghe An", "To Huu Bang");
     }
 }

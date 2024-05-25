@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hqtqlsv.MainViewController">
+<AnchorPane fx:id="dad" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hqtqlsv.Controller.MainViewController">
    <children>
       <Label layoutX="77.0" layoutY="60.0" text="welcome" />
    </children>
+
+   <Label text="main" BorderPane.alignment="CENTER" />
+   <Button fx:id="showProfileBtn" layoutX="153.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#showProfile" text="Show profule" />
 </AnchorPane>

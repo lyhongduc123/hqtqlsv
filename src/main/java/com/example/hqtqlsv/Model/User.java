@@ -50,9 +50,22 @@ public abstract class User {
     }
 
 
-    public User(int id, String userName, String password) {
+    protected User(int id, String userName, String password) {
         this.id = id;
         this.userName = userName;
         this.password = password;
+    }
+
+    private static User user;
+
+    public synchronized static void init(User user) {
+        User.user = user;
+    }
+
+    public synchronized static User getInstance() {
+        if (user == null) {
+            throw new IllegalStateException("User is not initialized");
+        }
+        return user;
     }
 }
