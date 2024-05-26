@@ -33,4 +33,8 @@ public class MainViewController implements Initializable {
     public void showProfile() {
         ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.PROFILE_VIEW);
     }
+
+    public void showAdmin() {
+        ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.ADMIN_VIEW);
+    }
 }

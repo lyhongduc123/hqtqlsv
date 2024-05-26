@@ -26,8 +26,8 @@ public class HelloController {
     @FXML
     void login() {
         //TODO real result
-        //int result = AccountActivity.login(usernameField.getText(), passwordField.getText());
-        int result = AccountActivity.login("22020800", "123456Aa");
+        int result = AccountActivity.login(usernameField.getText(), passwordField.getText());
+        //int result = AccountActivity.login("22020800", "123456Aa");
         if (result == AccountActivity.LOGIN_SUCCESS) {
             errorLabel.setVisible(false);
             ViewFactory.getInstance().showWindow();

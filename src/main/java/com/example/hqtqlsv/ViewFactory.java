@@ -1,10 +1,12 @@
 package com.example.hqtqlsv;
 
+import com.example.hqtqlsv.Model.Admin;
+import com.example.hqtqlsv.Model.Student;
+import com.example.hqtqlsv.Model.User;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -13,9 +15,8 @@ import java.io.IOException;
 public class ViewFactory {
     private static ViewFactory instance;
     private final StringProperty currentSelection;
-    public static final String LOGIN_VIEW = "loginView";
-    public static final String MAIN_VIEW = "mainView";
     public static final String PROFILE_VIEW = "profileView";
+    public static final String ADMIN_VIEW = "adminView";
 
     private AnchorPane profileView;
 
@@ -66,7 +67,10 @@ public class ViewFactory {
     }
 
     public void showWindow() {
-        scene = createStage(new FXMLLoader(getClass().getResource("main-view.fxml")));
+        if (User.getInstance().getClass().equals(Student.class))
+            scene = createStage(new FXMLLoader(getClass().getResource("main-view.fxml")));
+        else if (Student.getInstance().getClass().equals(Admin.class))
+            scene = createStage(new FXMLLoader(getClass().getResource("admin-view.fxml")));
     }
 
     public AnchorPane getProfileView() {
@@ -79,4 +83,6 @@ public class ViewFactory {
         }
         return profileView;
     }
+
+
 }

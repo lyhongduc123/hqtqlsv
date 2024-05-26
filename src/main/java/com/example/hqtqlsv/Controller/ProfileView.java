@@ -52,6 +52,7 @@ public class ProfileView implements Initializable {
             mssv.setText(student.getMssv());
             lop.setText(student.getTen_lop_fk());
             ngaySinh.setValue(student.getNgaySinh().toLocalDate());
+            email.setText(student.getEmail());
         }
     }
 }
