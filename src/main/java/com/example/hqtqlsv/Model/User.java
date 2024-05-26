@@ -1,13 +1,13 @@
 package com.example.hqtqlsv.Model;
 
-import java.sql.Date;
+import java.time.OffsetDateTime;
 
 public abstract class User {
     private int id;
     private String userName;
     private String password;
-    private Date createdAt;
-    private Date updatedAt;
+    private OffsetDateTime createdAt;
+    private OffsetDateTime updatedAt;
 
     public int getId() {
         return id;
@@ -33,27 +33,29 @@ public abstract class User {
         this.password = password;
     }
 
-    public Date getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
 
-    protected User(int id, String userName, String password) {
+    protected User(int id, String userName, String password, OffsetDateTime createdAt, OffsetDateTime updatedAt) {
         this.id = id;
         this.userName = userName;
         this.password = password;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     private static User user;

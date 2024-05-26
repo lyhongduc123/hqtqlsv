@@ -6,7 +6,7 @@ import com.example.hqtqlsv.Model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
@@ -22,21 +22,42 @@ public class ProfileView implements Initializable {
     private Button changePw;
 
     @FXML
+    private TextField email;
+
+    @FXML
     private TextField hoVaTen;
+
+    @FXML
+    private TextField lop;
+
+    @FXML
+    private TextField mssv;
 
     @FXML
     private TextField queQuan;
 
     @FXML
-    private Label sex;
+    private TextField sex;
+
+    @FXML
+    private DatePicker ngaySinh;
+
 
     @FXML
     void changProfile() {
-        if (!isChangingProfile) {
-            hoVaTen.setEditable(true);
-            queQuan.setEditable(true);
+        isChangingProfile = !isChangingProfile;
+        if (isChangingProfile) {
+            hoVaTen.setDisable(false);
+            queQuan.setDisable(false);
+            sex.setDisable(false);
+            email.setDisable(false);
             changePrfBtn.setText("Lưu");
         } else {
+            hoVaTen.setDisable(true);
+            queQuan.setDisable(true);
+            sex.setDisable(true);
+            email.setDisable(true);
+            changePrfBtn.setText("Chỉnh sửa");
             boolean success = AccountActivity.changeProfile(User.getInstance().getUserName(), hoVaTen.getText()
             ,  queQuan.getText(), false ); //TODO fix sex
             if (success ==  false) {
@@ -44,13 +65,10 @@ public class ProfileView implements Initializable {
                 hoVaTen.setText(student.getHoVaTen());
                 queQuan.setText(student.getQueQuan());
                 sex.setText(student.isMale()? "Nam" : "Nữ");
+                System.out.println("can't change profile");
                 return;
             }
             User.init(AccountActivity.queryStudent(User.getInstance().getUserName()));
-            hoVaTen.setEditable(false);
-            queQuan.setEditable(false);
-            changePrfBtn.setText("Chỉnh sửa");
-
         }
     }
 
@@ -61,13 +79,14 @@ public class ProfileView implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        hoVaTen.setEditable(false);
-        queQuan.setEditable(false);
         if (User.getInstance().getClass().equals(Student.class)) {
             Student student = (Student) User.getInstance();
             hoVaTen.setText(student.getHoVaTen());
             queQuan.setText(student.getQueQuan());
             sex.setText(student.isMale()? "Nam" : "Nữ");
+            mssv.setText(student.getMssv());
+            lop.setText(student.getTen_lop_fk());
+            ngaySinh.setValue(student.getNgaySinh().toLocalDate());
         }
     }
 }

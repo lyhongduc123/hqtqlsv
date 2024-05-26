@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hqtqlsv.Controller.ProfileView">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hqtqlsv.Controller.ProfileView">
    <children>
-      <Label layoutX="288.0" layoutY="209.0" text="profile" />
-      <TextField fx:id="hoVaTen" layoutX="288.0" layoutY="272.0" prefHeight="26.0" prefWidth="502.0" promptText="Ho va ten" />
-      <Label layoutX="198.0" layoutY="277.0" text="Ho va ten:" />
-      <Label layoutX="198.0" layoutY="321.0" text="Gioi tinh" />
-      <Label fx:id="sex" layoutX="288.0" layoutY="321.0" />
-      <Label layoutX="198.0" layoutY="376.0" text="Que quan" />
-      <TextField fx:id="queQuan" layoutX="288.0" layoutY="372.0" prefHeight="26.0" prefWidth="502.0" promptText="que huong la chum khe ngot" />
+      <Label layoutX="14.0" layoutY="14.0" text="profile" />
+      <TextField fx:id="hoVaTen" disable="true" layoutX="263.0" layoutY="128.0" prefHeight="26.0" prefWidth="502.0" promptText="Ho va ten" />
+      <Label layoutX="193.0" layoutY="133.0" text="Ho va ten:" />
+      <Label layoutX="184.0" layoutY="175.0" text="Gioi tinh:" />
+      <Label layoutX="182.0" layoutY="256.0" text="Que quan:" />
+      <TextField fx:id="queQuan" disable="true" layoutX="263.0" layoutY="260.0" prefHeight="26.0" prefWidth="502.0" promptText="que huong la chum khe ngot" />
       <Button fx:id="changePrfBtn" layoutX="305.0" layoutY="548.0" mnemonicParsing="false" onMouseClicked="#changProfile" text="sua thong tin" />
       <Button fx:id="changePw" layoutX="471.0" layoutY="548.0" mnemonicParsing="false" onMouseClicked="#changePass" text="doi mat khau" />
+      <Label layoutX="193.0" layoutY="90.0" text="MSSV:" />
+      <TextField fx:id="mssv" disable="true" layoutX="263.0" layoutY="86.0" />
+      <Label layoutX="189.0" layoutY="353.0" text="Email:" />
+      <TextField fx:id="email" disable="true" layoutX="264.0" layoutY="349.0" />
+      <TextField fx:id="sex" disable="true" layoutX="263.0" layoutY="171.0" />
+      <Label layoutX="209.0" layoutY="308.0" text="Lop:" />
+      <TextField fx:id="lop" disable="true" layoutX="263.0" layoutY="304.0" />
+      <Label layoutX="178.0" layoutY="214.0" text="Ngay sinh:" />
+      <DatePicker fx:id="ngaySinh" disable="true" editable="false" layoutX="261.0" layoutY="210.0" />
    </children>
 </AnchorPane>

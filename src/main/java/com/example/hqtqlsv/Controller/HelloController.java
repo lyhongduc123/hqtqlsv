@@ -25,21 +25,17 @@ public class HelloController {
     //TODO fix when completed query
     @FXML
     void login() {
-        User.init(AccountActivity.queryStudent("testonly")); //just for test; delete later
-        ViewFactory.getInstance().showWindow();
-//        int result = AccountActivity.login(usernameField.getText(), passwordField.getText());
-
-//        if (result == AccountActivity.LOGIN_SUCCESS) {
-
-//            errorLabel.setVisible(false);
-//            User.init(new Student());
-//            ViewFactory.getInstance().showWindow();
-//            return;
-//        }
-//        if (result == AccountActivity.LOGIN_FAILED) {
-//            errorLabel.setVisible(true);
-//        }
-
+        //TODO real result
+        //int result = AccountActivity.login(usernameField.getText(), passwordField.getText());
+        int result = AccountActivity.login("22020800", "123456Aa");
+        if (result == AccountActivity.LOGIN_SUCCESS) {
+            errorLabel.setVisible(false);
+            ViewFactory.getInstance().showWindow();
+            return;
+        }
+        if (result == AccountActivity.LOGIN_FAILED) {
+            errorLabel.setVisible(true);
+        }
     }
 
     @FXML
