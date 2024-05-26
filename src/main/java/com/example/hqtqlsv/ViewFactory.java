@@ -16,9 +16,10 @@ public class ViewFactory {
     private static ViewFactory instance;
     private final StringProperty currentSelection;
     public static final String PROFILE_VIEW = "profileView";
-    public static final String ADMIN_VIEW = "adminView";
+    public static final String TIM_SINH_VIEN = "timSinhVien";
 
     private AnchorPane profileView;
+    private AnchorPane timSinhVien;
 
     private ViewFactory() {
         stage.setResizable(false);
@@ -86,5 +87,16 @@ public class ViewFactory {
         return profileView;
     }
 
-
+    public AnchorPane getTimSinhVien() {
+        if (timSinhVien == null) {
+            try {
+                timSinhVien = FXMLLoader.load(getClass().getResource("tim-sinh-vien-view.fxml"));
+                AnchorPane.setBottomAnchor(timSinhVien, 0.0);
+                AnchorPane.setRightAnchor(timSinhVien, 0.0);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return timSinhVien;
+    }
 }

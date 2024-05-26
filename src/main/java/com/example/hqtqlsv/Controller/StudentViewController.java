@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StudentViewController implements Initializable {
-    private boolean hasAPane = false;
+    private boolean hasAPaneOn = false;
     @FXML
     public Button showProfileBtn;
     @FXML
@@ -23,7 +23,7 @@ public class StudentViewController implements Initializable {
                 case ViewFactory.PROFILE_VIEW -> {
                     dropLast();
                     dad.getChildren().add(ViewFactory.getInstance().getProfileView());
-                    hasAPane = true;
+                    hasAPaneOn = true;
                 }
             }
         });
@@ -34,7 +34,7 @@ public class StudentViewController implements Initializable {
     }
 
     private void dropLast() {
-        if (hasAPane) {
+        if (hasAPaneOn) {
             dad.getChildren().remove(dad.getChildren().size() - 1);
         }
     }
