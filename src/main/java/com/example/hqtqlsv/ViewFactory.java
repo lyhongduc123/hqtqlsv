@@ -68,7 +68,7 @@ public class ViewFactory {
 
     public void showWindow() {
         if (User.getInstance().getClass().equals(Student.class))
-            scene = createStage(new FXMLLoader(getClass().getResource("main-view.fxml")));
+            scene = createStage(new FXMLLoader(getClass().getResource("student-view.fxml")));
         else if (Student.getInstance().getClass().equals(Admin.class))
             scene = createStage(new FXMLLoader(getClass().getResource("admin-view.fxml")));
     }

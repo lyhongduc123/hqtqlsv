@@ -5,12 +5,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainViewController implements Initializable {
+public class StudentViewController implements Initializable {
+    private boolean hasAPane = false;
     @FXML
     public Button showProfileBtn;
     @FXML
@@ -20,7 +20,11 @@ public class MainViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ViewFactory.getInstance().getCurrentSelection().addListener((o, oldValue, newValue) -> {
             switch (newValue) {
-                case ViewFactory.PROFILE_VIEW -> dad.getChildren().add(ViewFactory.getInstance().getProfileView());
+                case ViewFactory.PROFILE_VIEW -> {
+                    dropLast();
+                    dad.getChildren().add(ViewFactory.getInstance().getProfileView());
+                    hasAPane = true;
+                }
             }
         });
     }
@@ -29,7 +33,9 @@ public class MainViewController implements Initializable {
         ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.PROFILE_VIEW);
     }
 
-    public void showAdmin() {
-        ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.ADMIN_VIEW);
+    private void dropLast() {
+        if (hasAPane) {
+            dad.getChildren().remove(dad.getChildren().size() - 1);
+        }
     }
 }

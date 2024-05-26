@@ -1,8 +1,6 @@
 package com.example.hqtqlsv.Controller;
 
 import javafx.fxml.Initializable;
-import javafx.scene.input.MouseEvent;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
