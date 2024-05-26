@@ -20,12 +20,7 @@ public class MainViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ViewFactory.getInstance().getCurrentSelection().addListener((o, oldValue, newValue) -> {
             switch (newValue) {
-                case ViewFactory.PROFILE_VIEW -> {
-                    if (dad.getChildren().size() >= 1) {
-                        dad.getChildren().remove(dad.getChildren().size() - 1);
-                    }
-                    dad.getChildren().add(ViewFactory.getInstance().getProfileView());
-                }
+                case ViewFactory.PROFILE_VIEW -> dad.getChildren().add(ViewFactory.getInstance().getProfileView());
             }
         });
     }

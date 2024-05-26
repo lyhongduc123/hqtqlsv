@@ -77,6 +77,8 @@ public class ViewFactory {
         if (profileView == null) {
             try {
                 profileView = FXMLLoader.load(getClass().getResource("profile-view.fxml"));
+                AnchorPane.setBottomAnchor(profileView, 0.0);
+                AnchorPane.setRightAnchor(profileView, 0.0);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
