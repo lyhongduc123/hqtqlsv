@@ -13,11 +13,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ProfileView implements Initializable {
-    private boolean isChangingProfile = false;
-
-    @FXML
-    private Button changePrfBtn;
-
     @FXML
     private Button changePw;
 
@@ -41,36 +36,6 @@ public class ProfileView implements Initializable {
 
     @FXML
     private DatePicker ngaySinh;
-
-
-    @FXML
-    void changProfile() {
-        isChangingProfile = !isChangingProfile;
-        if (isChangingProfile) {
-            hoVaTen.setDisable(false);
-            queQuan.setDisable(false);
-            sex.setDisable(false);
-            email.setDisable(false);
-            changePrfBtn.setText("Lưu");
-        } else {
-            hoVaTen.setDisable(true);
-            queQuan.setDisable(true);
-            sex.setDisable(true);
-            email.setDisable(true);
-            changePrfBtn.setText("Chỉnh sửa");
-            boolean success = AccountActivity.changeProfile(User.getInstance().getUserName(), hoVaTen.getText()
-            ,  queQuan.getText(), false ); //TODO fix sex
-            if (success ==  false) {
-                Student student = (Student) User.getInstance();
-                hoVaTen.setText(student.getHoVaTen());
-                queQuan.setText(student.getQueQuan());
-                sex.setText(student.isMale()? "Nam" : "Nữ");
-                System.out.println("can't change profile");
-                return;
-            }
-            User.init(AccountActivity.queryStudent(User.getInstance().getUserName()));
-        }
-    }
 
     @FXML
     void changePass() {

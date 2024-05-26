@@ -14,7 +14,6 @@
       <Label layoutX="184.0" layoutY="175.0" text="Gioi tinh:" />
       <Label layoutX="182.0" layoutY="256.0" text="Que quan:" />
       <TextField fx:id="queQuan" disable="true" layoutX="263.0" layoutY="260.0" prefHeight="26.0" prefWidth="502.0" promptText="que huong la chum khe ngot" />
-      <Button fx:id="changePrfBtn" layoutX="305.0" layoutY="548.0" mnemonicParsing="false" onMouseClicked="#changProfile" text="sua thong tin" />
       <Button fx:id="changePw" layoutX="471.0" layoutY="548.0" mnemonicParsing="false" onMouseClicked="#changePass" text="doi mat khau" />
       <Label layoutX="193.0" layoutY="90.0" text="MSSV:" />
       <TextField fx:id="mssv" disable="true" layoutX="263.0" layoutY="86.0" />
@@ -24,6 +23,6 @@
       <Label layoutX="209.0" layoutY="308.0" text="Lop:" />
       <TextField fx:id="lop" disable="true" layoutX="263.0" layoutY="304.0" />
       <Label layoutX="178.0" layoutY="214.0" text="Ngay sinh:" />
-      <DatePicker fx:id="ngaySinh" disable="true" editable="false" layoutX="261.0" layoutY="210.0" />
+      <DatePicker fx:id="ngaySinh" disable="true" layoutX="261.0" layoutY="210.0" />
    </children>
 </AnchorPane>
