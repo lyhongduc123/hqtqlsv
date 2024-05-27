@@ -22,10 +22,8 @@ public class HelloController {
     @FXML
     private TextField usernameField;
 
-    //TODO fix when completed query
     @FXML
     void login() {
-        //TODO real result
         int result = AccountActivity.login(usernameField.getText(), passwordField.getText());
         //int result = AccountActivity.login("22020800", "123456Aa");
         if (result == AccountActivity.LOGIN_SUCCESS) {

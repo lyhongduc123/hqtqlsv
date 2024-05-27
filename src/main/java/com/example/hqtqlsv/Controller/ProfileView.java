@@ -42,6 +42,8 @@ public class ProfileView implements Initializable {
 
     }
 
+
+    //TODO cho phép admin sửa thông tin, student thì không.
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if (User.getInstance().getClass().equals(Student.class)) {

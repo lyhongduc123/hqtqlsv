@@ -4,6 +4,7 @@ import com.example.hqtqlsv.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -37,5 +38,9 @@ public class StudentViewController implements Initializable {
         if (hasAPaneOn) {
             dad.getChildren().remove(dad.getChildren().size() - 1);
         }
+    }
+
+    @FXML
+    public void changePassword() {
     }
 }

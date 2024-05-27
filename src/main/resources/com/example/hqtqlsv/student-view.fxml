@@ -12,4 +12,5 @@
 
    <Label text="main" BorderPane.alignment="CENTER" />
    <Button fx:id="showProfileBtn" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#showProfile" text="Show profule" />
+   <Button layoutX="1.0" layoutY="312.0" mnemonicParsing="false" onMouseClicked="#changePassword" text="Doi mat khau" />
 </AnchorPane>
