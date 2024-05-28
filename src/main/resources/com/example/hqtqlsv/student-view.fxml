@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-
-<AnchorPane fx:id="dad" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hqtqlsv.Controller.StudentViewController">
-   <children>
-      <Label layoutX="77.0" layoutY="60.0" text="welcome" />
-   </children>
-
-   <Label text="main" BorderPane.alignment="CENTER" />
-   <Button fx:id="showProfileBtn" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#showProfile" text="Show profule" />
-   <Button layoutX="1.0" layoutY="312.0" mnemonicParsing="false" onMouseClicked="#changePassword" text="Doi mat khau" />
+<AnchorPane fx:id="dad" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: lightsteelblue;" stylesheets="@../../../css/sample.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hqtqlsv.Controller.StudentViewController">
+   <Button fx:id="showProfileBtn" layoutX="8.0" layoutY="228.0" mnemonicParsing="false" onMouseClicked="#showProfile" prefHeight="31.0" prefWidth="298.0" text="Show profile" />
+   <Button layoutX="8.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#changePassword" prefHeight="31.0" prefWidth="226.0" text="Change password" />
 </AnchorPane>

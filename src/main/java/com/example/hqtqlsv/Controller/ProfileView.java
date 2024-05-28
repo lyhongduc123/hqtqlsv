@@ -1,13 +1,14 @@
 package com.example.hqtqlsv.Controller;
 
-import com.example.hqtqlsv.Model.AccountActivity;
 import com.example.hqtqlsv.Model.Student;
 import com.example.hqtqlsv.Model.User;
+import com.example.hqtqlsv.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -56,5 +57,12 @@ public class ProfileView implements Initializable {
             ngaySinh.setValue(student.getNgaySinh().toLocalDate());
             email.setText(student.getEmail());
         }
+    }
+
+    @FXML
+    public void back() {
+        Pane parent = (Pane) ViewFactory.getInstance().getProfileView().getParent();
+        parent.getChildren().remove(ViewFactory.getInstance().getProfileView());
+        ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.MAIN_VIEW);
     }
 }

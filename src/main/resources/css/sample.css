@@ -1,0 +1,46 @@
+/* modern-style.css */
+
+/* Định dạng cho Label */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+/* Định dạng cho TextField */
+.text-field {
+    -fx-font-size: 14px;
+    -fx-pref-width: 200px;
+    -fx-background-radius: 5px; /* Góc bo tròn */
+    -fx-border-radius: 5px; /* Góc bo tròn */
+    -fx-border-color: #cccccc; /* Màu viền */
+    -fx-border-width: 1px; /* Độ rộng viền */
+}
+
+/* Định dạng cho Button */
+.button {
+    -fx-font-size: 14px;
+    -fx-pref-width: 150px;
+    -fx-background-color: #4CAF50; /* Màu nền */
+    -fx-text-fill: white; /* Màu chữ */
+    -fx-background-radius: 5px; /* Góc bo tròn */
+    -fx-border-radius: 5px; /* Góc bo tròn */
+    -fx-border-color: transparent; /* Màu viền */
+}
+
+/* Định dạng cho Button khi rê chuột vào */
+.button:hover {
+    -fx-background-color: #45a049; /* Màu nền khi hover */
+}
+
+/* Định dạng cho Button khi được nhấn */
+.button:pressed {
+    -fx-background-color: #36723C; /* Màu nền khi được nhấn */
+}
+
+/* Định dạng cho GridPane */
+.grid-pane {
+    -fx-hgap: 10px; /* Khoảng cách ngang giữa các phần tử */
+    -fx-vgap: 10px; /* Khoảng cách dọc giữa các phần tử */
+    -fx-padding: 20px; /* Khoảng cách từ mép */
+}
+

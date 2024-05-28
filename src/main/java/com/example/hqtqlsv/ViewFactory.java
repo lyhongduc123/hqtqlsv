@@ -18,6 +18,7 @@ public class ViewFactory {
     public static final String PROFILE_VIEW = "profileView";
     public static final String TIM_SINH_VIEN = "timSinhVien";
     public static final String CHANGE_PASSWORD_VIEW = "changePassword";
+    public static final String MAIN_VIEW = "mainView";
 
     private AnchorPane profileView;
     private AnchorPane timSinhVien;

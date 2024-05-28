@@ -18,8 +18,8 @@
             <TextField fx:id="usernameField" layoutX="167.0" layoutY="122.0" onKeyTyped="#loginByEnter" prefHeight="30.0" prefWidth="281.0" promptText="Tên đăng nhập" />
             <PasswordField fx:id="passwordField" layoutX="167.0" layoutY="175.0" onKeyTyped="#loginByEnter" promptText="Mật khẩu" />
             <Button layoutX="203.0" layoutY="278.0" mnemonicParsing="false" onAction="#login" text="Đăng nhập" />
-            <Label fx:id="errorLabel" layoutX="164.0" layoutY="219.0" prefHeight="20.0" prefWidth="203.0" text="Sai tên đăng nhập hoặc mật khẩu" textFill="RED" visible="false" />
-            <Label layoutX="197.0" layoutY="14.0" styleClass="medium-title" text="Đăng nhập" />
+            <Label fx:id="errorLabel" layoutX="164.0" layoutY="219.0" prefHeight="20.0" prefWidth="285.0" styleClass="err" text="Sai tên đăng nhập hoặc mật khẩu" textFill="RED" visible="false" />
+            <Label layoutX="207.0" layoutY="14.0" styleClass="medium-title" text="Đăng nhập" />
             <Label layoutX="53.0" layoutY="127.0" text="Tên đăng nhập:" />
             <Label layoutX="89.0" layoutY="180.0" text="Mật khẩu:" />
          </children>

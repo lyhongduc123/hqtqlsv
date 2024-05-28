@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hqtqlsv.Controller.TimSinhVienView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hqtqlsv.Controller.TimSinhVienView">
    <children>
-      <TableView fx:id="table" layoutX="150.0" layoutY="193.0" prefHeight="400.0" prefWidth="600.0">
+      <TableView fx:id="table" layoutX="14.0" layoutY="200.0" prefHeight="390.0" prefWidth="603.0">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="75.0" text="MSSV" />
             <TableColumn fx:id="hotenCol" prefWidth="75.0" text="Họ Tên" />
@@ -23,16 +23,16 @@
             <TableColumn fx:id="emailCol" prefWidth="101.0" text="Email" />
         </columns>
       </TableView>
-      <Button layoutX="428.0" layoutY="149.0" mnemonicParsing="false" onAction="#Search" prefHeight="31.0" prefWidth="102.0" text="Tìm Kiếm" />
-      <GridPane layoutX="150.0" layoutY="14.0" prefHeight="166.0" prefWidth="254.0">
+      <Button layoutX="289.0" layoutY="148.0" mnemonicParsing="false" onAction="#Search" prefHeight="31.0" prefWidth="102.0" text="Tìm Kiếm" />
+      <GridPane layoutX="23.0" layoutY="14.0" prefHeight="166.0" prefWidth="254.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="66.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="169.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="33.4" minHeight="10.0" prefHeight="33.4" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="33.39999999999999" minHeight="10.0" prefHeight="33.39999999999999" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
@@ -49,5 +49,6 @@
             <TextField fx:id="lopField" promptText="QH-20xx-I/CQ-x" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
+      <Button layoutX="421.0" layoutY="151.0" mnemonicParsing="false" text="Xem" />
    </children>
 </AnchorPane>

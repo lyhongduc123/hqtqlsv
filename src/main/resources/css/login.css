@@ -18,7 +18,7 @@
 /* Định dạng cho Button */
 .button {
     -fx-font-size: 14px;
-    -fx-pref-width: 100px;
+    -fx-pref-width: 150px;
     -fx-background-color: #4CAF50; /* Màu nền */
     -fx-text-fill: white; /* Màu chữ */
 }
@@ -38,4 +38,7 @@
     -fx-font-size: 18px;
     -fx-text-fill: #333333;
     -fx-font-weight: bold;
+}
+.err {
+    -fx-text-fill: red;
 }

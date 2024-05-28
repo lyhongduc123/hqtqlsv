@@ -5,25 +5,44 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hqtqlsv.Controller.ProfileView">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="profile" />
-      <TextField fx:id="hoVaTen" disable="true" layoutX="263.0" layoutY="128.0" prefHeight="26.0" prefWidth="502.0" promptText="Ho va ten" />
-      <Label layoutX="193.0" layoutY="133.0" text="Ho va ten:" />
-      <Label layoutX="184.0" layoutY="175.0" text="Gioi tinh:" />
-      <Label layoutX="182.0" layoutY="256.0" text="Que quan:" />
-      <TextField fx:id="queQuan" disable="true" layoutX="263.0" layoutY="260.0" prefHeight="26.0" prefWidth="502.0" promptText="que huong la chum khe ngot" />
-      <Button fx:id="changePw" layoutX="471.0" layoutY="548.0" mnemonicParsing="false" onMouseClicked="#changePass" text="doi mat khau" />
-      <Label layoutX="193.0" layoutY="90.0" text="MSSV:" />
-      <TextField fx:id="mssv" disable="true" layoutX="263.0" layoutY="86.0" />
-      <Label layoutX="189.0" layoutY="353.0" text="Email:" />
-      <TextField fx:id="email" disable="true" layoutX="264.0" layoutY="349.0" />
-      <TextField fx:id="sex" disable="true" layoutX="263.0" layoutY="171.0" />
-      <Label layoutX="209.0" layoutY="308.0" text="Lop:" />
-      <TextField fx:id="lop" disable="true" layoutX="263.0" layoutY="304.0" />
-      <Label layoutX="178.0" layoutY="214.0" text="Ngay sinh:" />
-      <DatePicker fx:id="ngaySinh" disable="true" layoutX="261.0" layoutY="210.0" />
-      <Label layoutX="751.0" layoutY="565.0" text="profile" />
+      <GridPane layoutX="45.0" layoutY="89.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TextField fx:id="hoVaTen" disable="true" prefHeight="26.0" prefWidth="502.0" promptText="Ho va ten" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Ho va ten:" GridPane.rowIndex="1" />
+            <Label text="Gioi tinh:" GridPane.rowIndex="2" />
+            <Label text="Que quan:" GridPane.rowIndex="4" />
+            <TextField fx:id="queQuan" disable="true" prefHeight="26.0" prefWidth="502.0" promptText="que huong la chum khe ngot" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="MSSV:" />
+            <TextField fx:id="mssv" disable="true" GridPane.columnIndex="1" />
+            <Label text="Email:" GridPane.rowIndex="6" />
+            <TextField fx:id="email" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="sex" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Lop:" GridPane.rowIndex="5" />
+            <TextField fx:id="lop" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Ngay sinh:" GridPane.rowIndex="3" />
+            <DatePicker fx:id="ngaySinh" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button fx:id="changePw" layoutX="274.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#changePass" text="change password" />
+      <Button layoutX="740.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#back" text="Back" />
    </children>
 </AnchorPane>

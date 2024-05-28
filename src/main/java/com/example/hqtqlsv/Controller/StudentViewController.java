@@ -31,10 +31,12 @@ public class StudentViewController implements Initializable {
                     dad.getChildren().add(ViewFactory.getInstance().getChangePasswordView());
                     hasAPaneOn = true;
                 }
+                case ViewFactory.MAIN_VIEW -> hasAPaneOn = false;
             }
         });
     }
 
+    @FXML
     public void showProfile() {
         ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.PROFILE_VIEW);
     }
