@@ -1,11 +1,12 @@
-package com.example.hqtqlsv.Controller;
+package com.example.hqtqlsv.Controller.admin;
 
-import com.example.hqtqlsv.Model.DBConnection;
-import com.example.hqtqlsv.Model.SinhVien;
+import com.example.hqtqlsv.Model.*;
+import com.example.hqtqlsv.ViewFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -19,6 +20,8 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class TimSinhVienView implements Initializable {
+    @FXML
+    public Label numRes;
     @FXML
     private TextField idField;
     @FXML
@@ -66,12 +69,14 @@ public class TimSinhVienView implements Initializable {
         if (!lop.isEmpty()) query += " AND ten_lop_fk LIKE '" + lop + "%'";
 
         System.out.println(query);
+        int cnt = 0;
 
         ObservableList<SinhVien> list = FXCollections.observableArrayList();
         table.getItems().clear();
         try ( ResultSet rs = stmt.executeQuery(query))
         {
             while (rs.next()) {
+                ++cnt;
                 list.add(new SinhVien(
                         rs.getString("mssv"),
                         rs.getString("ho_ten"),
@@ -87,11 +92,8 @@ public class TimSinhVienView implements Initializable {
         catch (Exception e) {
             e.printStackTrace();
         }
-
-
         table.setItems(list);
-
-
+        numRes.setText("Có " + cnt + " kết quả.");
     }
     Connection conn;
     Statement stmt;
@@ -110,6 +112,18 @@ public class TimSinhVienView implements Initializable {
             stmt = conn.createStatement();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+
+    }
+
+    @FXML
+    public void xem() {
+        SinhVien nguoi_duoc_chon = table.getSelectionModel().getSelectedItem();
+        if (nguoi_duoc_chon!= null) {
+            System.out.println(nguoi_duoc_chon);
+            Student student = AccountActivity.queryStudent(nguoi_duoc_chon.getMssv());
+            StudentForShow.setStudent(student);
+            ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.PROFILE_VIEW);
         }
     }
 }

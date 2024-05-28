@@ -86,4 +86,19 @@ public class SinhVien {
     }
 
     // Getters và setters
+
+
+    @Override
+    public String toString() {
+        return "SinhVien{" +
+                "mssv='" + mssv + '\'' +
+                ", hoTen='" + hoTen + '\'' +
+                ", ngaySinh='" + ngaySinh + '\'' +
+                ", cccd='" + cccd + '\'' +
+                ", gioiTinh='" + gioiTinh + '\'' +
+                ", tenLop='" + tenLop + '\'' +
+                ", queQuan='" + queQuan + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

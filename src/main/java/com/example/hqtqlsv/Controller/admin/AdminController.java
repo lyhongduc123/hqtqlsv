@@ -1,4 +1,4 @@
-package com.example.hqtqlsv.Controller;
+package com.example.hqtqlsv.Controller.admin;
 
 import com.example.hqtqlsv.ViewFactory;
 import javafx.fxml.FXML;
@@ -20,8 +20,15 @@ public class AdminController implements Initializable {
                 case ViewFactory.TIM_SINH_VIEN -> {
                     dropLast();
                     dad.getChildren().add(ViewFactory.getInstance().getTimSinhVien());
+                    ViewFactory.getInstance().getTimSinhVien().setVisible(true);
                     hasAPaneOn = true;
                 }
+                case ViewFactory.PROFILE_VIEW -> {
+                    ViewFactory.getInstance().getTimSinhVien().setVisible(false);
+                    dad.getChildren().add(ViewFactory.getInstance().getProfileView());
+                    hasAPaneOn = true;
+                }
+                case ViewFactory.MAIN_VIEW -> hasAPaneOn = false;
             }
         });
     }

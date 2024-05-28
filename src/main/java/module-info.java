@@ -13,4 +13,8 @@ module com.example.hqtqlsv {
     opens com.example.hqtqlsv.Model to javafx.fxml;
     exports com.example.hqtqlsv.Controller;
     opens com.example.hqtqlsv.Controller to javafx.fxml;
+    exports com.example.hqtqlsv.Controller.admin;
+    opens com.example.hqtqlsv.Controller.admin to javafx.fxml;
+    exports com.example.hqtqlsv.Controller.student;
+    opens com.example.hqtqlsv.Controller.student to javafx.fxml;
 }

@@ -1,6 +1,8 @@
-package com.example.hqtqlsv.Controller;
+package com.example.hqtqlsv.Controller.student;
 
+import com.example.hqtqlsv.Model.Admin;
 import com.example.hqtqlsv.Model.Student;
+import com.example.hqtqlsv.Model.StudentForShow;
 import com.example.hqtqlsv.Model.User;
 import com.example.hqtqlsv.ViewFactory;
 import javafx.fxml.FXML;
@@ -13,7 +15,7 @@ import javafx.scene.layout.Pane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ProfileView implements Initializable {
+public class StudentProfileView implements Initializable {
     @FXML
     private Button changePw;
 
@@ -38,31 +40,28 @@ public class ProfileView implements Initializable {
     @FXML
     private DatePicker ngaySinh;
 
-    @FXML
-    void changePass() {
-
-    }
-
 
     //TODO cho phép admin sửa thông tin, student thì không.
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (User.getInstance().getClass().equals(Student.class)) {
-            Student student = (Student) User.getInstance();
-            hoVaTen.setText(student.getHoVaTen());
-            queQuan.setText(student.getQueQuan());
-            sex.setText(student.isMale()? "Nam" : "Nữ");
-            mssv.setText(student.getMssv());
-            lop.setText(student.getTen_lop_fk());
-            ngaySinh.setValue(student.getNgaySinh().toLocalDate());
-            email.setText(student.getEmail());
-        }
+        hoVaTen.setText(StudentForShow.getStudent().getHoVaTen());
+        queQuan.setText(StudentForShow.getStudent().getQueQuan());
+        sex.setText(StudentForShow.getStudent().isMale()? "Nam" : "Nữ");
+        mssv.setText(StudentForShow.getStudent().getMssv());
+        lop.setText(StudentForShow.getStudent().getTen_lop_fk());
+        ngaySinh.setValue(StudentForShow.getStudent().getNgaySinh().toLocalDate());
+        email.setText(StudentForShow.getStudent().getEmail());
     }
 
     @FXML
     public void back() {
+        if (User.getInstance() instanceof Student) back(ViewFactory.MAIN_VIEW);
+        if (User.getInstance() instanceof Admin) back(ViewFactory.TIM_SINH_VIEN);
+    }
+
+    public void back(String previousState) {
         Pane parent = (Pane) ViewFactory.getInstance().getProfileView().getParent();
         parent.getChildren().remove(ViewFactory.getInstance().getProfileView());
-        ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.MAIN_VIEW);
+        ViewFactory.getInstance().getCurrentSelection().set(previousState);
     }
 }

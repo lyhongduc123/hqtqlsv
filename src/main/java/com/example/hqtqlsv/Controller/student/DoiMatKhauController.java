@@ -1,4 +1,4 @@
-package com.example.hqtqlsv.Controller;
+package com.example.hqtqlsv.Controller.student;
 
 import com.example.hqtqlsv.Model.AccountActivity;
 import com.example.hqtqlsv.Model.User;

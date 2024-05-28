@@ -42,10 +42,6 @@ public class ViewFactory {
         return currentSelection;
     }
 
-    public StringProperty currentSelectionProperty() {
-        return currentSelection;
-    }
-
     private Scene createStage(FXMLLoader loader) {
         Scene scene = null;
 
@@ -71,8 +67,10 @@ public class ViewFactory {
     }
 
     public void showWindow() {
-        if (User.getInstance().getClass().equals(Student.class))
-            scene = createStage(new FXMLLoader(getClass().getResource("student-view.fxml")));
+        if (User.getInstance().getClass().equals(Student.class)) {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("student-view.fxml"));
+            scene = createStage(fxmlLoader);
+        }
         else if (Student.getInstance().getClass().equals(Admin.class))
             scene = createStage(new FXMLLoader(getClass().getResource("admin-view.fxml")));
     }

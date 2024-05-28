@@ -1,7 +1,11 @@
-package com.example.hqtqlsv.Controller;
+package com.example.hqtqlsv.Controller.student;
 
+import com.example.hqtqlsv.Model.Student;
+import com.example.hqtqlsv.Model.StudentForShow;
+import com.example.hqtqlsv.Model.User;
 import com.example.hqtqlsv.ViewFactory;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -19,6 +23,7 @@ public class StudentViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        StudentForShow.setStudent((Student) User.getInstance());
         ViewFactory.getInstance().getCurrentSelection().addListener((o, oldValue, newValue) -> {
             switch (newValue) {
                 case ViewFactory.PROFILE_VIEW -> {
