@@ -114,4 +114,18 @@ public class AccountActivity {
         System.out.println("cant query for admin from database");
         throw new IllegalStateException("cant query for admin from database");
     }
+
+    public static boolean changePassword(String username, String newPassword) {
+        Statement stmt;
+        try {
+            stmt = DBConnection.getConnection().createStatement();
+            String query = "UPDATE users SET password = \'" + newPassword + "\' WHERE username = \'" + username + "\';";
+            stmt.executeUpdate(query);
+            stmt.close();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return false;
+    }
 }

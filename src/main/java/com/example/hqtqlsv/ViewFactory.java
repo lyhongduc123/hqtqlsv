@@ -17,9 +17,11 @@ public class ViewFactory {
     private final StringProperty currentSelection;
     public static final String PROFILE_VIEW = "profileView";
     public static final String TIM_SINH_VIEN = "timSinhVien";
+    public static final String CHANGE_PASSWORD_VIEW = "changePassword";
 
     private AnchorPane profileView;
     private AnchorPane timSinhVien;
+    private AnchorPane changePasswordView;
 
     private ViewFactory() {
         stage.setResizable(false);
@@ -85,6 +87,19 @@ public class ViewFactory {
             }
         }
         return profileView;
+    }
+
+    public AnchorPane getChangePasswordView() {
+        if (changePasswordView == null) {
+            try {
+                changePasswordView = FXMLLoader.load(getClass().getResource("change-password-view.fxml"));
+                AnchorPane.setBottomAnchor(changePasswordView, 0.0);
+                AnchorPane.setRightAnchor(changePasswordView, 0.0);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return changePasswordView;
     }
 
     public AnchorPane getTimSinhVien() {

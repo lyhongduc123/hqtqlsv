@@ -26,6 +26,11 @@ public class StudentViewController implements Initializable {
                     dad.getChildren().add(ViewFactory.getInstance().getProfileView());
                     hasAPaneOn = true;
                 }
+                case ViewFactory.CHANGE_PASSWORD_VIEW -> {
+                    dropLast();
+                    dad.getChildren().add(ViewFactory.getInstance().getChangePasswordView());
+                    hasAPaneOn = true;
+                }
             }
         });
     }
@@ -42,5 +47,6 @@ public class StudentViewController implements Initializable {
 
     @FXML
     public void changePassword() {
+        ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.CHANGE_PASSWORD_VIEW);
     }
 }
