@@ -1,8 +1,10 @@
 package com.example.hqtqlsv.Controller.admin;
 
+import com.example.hqtqlsv.Model.AccountActivity;
 import com.example.hqtqlsv.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -41,5 +43,10 @@ public class AdminController implements Initializable {
         if (hasAPaneOn) {
             dad.getChildren().remove(dad.getChildren().size() - 1);
         }
+    }
+
+    public void logOut() {
+        AccountActivity.logOut();
+        ViewFactory.getInstance().showLoginView();
     }
 }

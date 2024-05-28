@@ -70,4 +70,9 @@ public abstract class User {
         }
         return user;
     }
+
+    public void logOut() {
+        user = null;
+        StudentForShow.setStudent(null);
+    }
 }

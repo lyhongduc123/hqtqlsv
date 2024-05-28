@@ -1,5 +1,6 @@
 package com.example.hqtqlsv.Controller.student;
 
+import com.example.hqtqlsv.Model.AccountActivity;
 import com.example.hqtqlsv.Model.Student;
 import com.example.hqtqlsv.Model.StudentForShow;
 import com.example.hqtqlsv.Model.User;
@@ -55,5 +56,10 @@ public class StudentViewController implements Initializable {
     @FXML
     public void changePassword() {
         ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.CHANGE_PASSWORD_VIEW);
+    }
+
+    public void logOut() {
+        AccountActivity.logOut();
+        ViewFactory.getInstance().showLoginView();
     }
 }

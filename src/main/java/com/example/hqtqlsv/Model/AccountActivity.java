@@ -128,4 +128,8 @@ public class AccountActivity {
         }
         return false;
     }
+
+    public static void logOut() {
+        User.getInstance().logOut();
+    }
 }
