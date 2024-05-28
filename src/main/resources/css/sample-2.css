@@ -1,0 +1,49 @@
+.root {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Định dạng cho tiêu đề */
+.label-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+/* Định dạng cho các nút */
+.button {
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-background-color: #4CAF50; /* Màu xanh lá cây */
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+}
+
+/* Khi nút được nhấn */
+.button:pressed {
+    -fx-background-color: #45a049; /* Màu xanh lá cây đậm hơn */
+}
+
+/* Định dạng cho bảng */
+.table-view {
+    -fx-background-color: #ffffff;
+}
+
+/* Định dạng cho tiêu đề của bảng */
+.table-view .column-header {
+    -fx-background-color: #4CAF50; /* Màu xanh lá cây */
+    -fx-text-fill: white;
+}
+
+/* Định dạng cho ô trong bảng */
+.table-row-cell {
+    -fx-background-color: #f0f0f0; /* Màu nền cho từng hàng */
+}
+
+/* Khi con trỏ rê vào hàng của bảng */
+.table-row-cell:hover {
+    -fx-background-color: #e0e0e0; /* Màu nền nhạt hơn */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #4CAF50; /* Màu xanh lá cây đậm hơn */
+ }
