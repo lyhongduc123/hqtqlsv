@@ -1,5 +1,6 @@
 package com.example.hqtqlsv;
 
+import com.example.hqtqlsv.Controller.student.StudentProfileView;
 import com.example.hqtqlsv.Model.Admin;
 import com.example.hqtqlsv.Model.Student;
 import com.example.hqtqlsv.Model.User;
@@ -75,7 +76,8 @@ public class ViewFactory {
             scene = createStage(new FXMLLoader(getClass().getResource("admin-view.fxml")));
     }
 
-    public AnchorPane getProfileView() {
+    public AnchorPane getProfileView(boolean reset) {
+        if (reset) profileView = null;
         if (profileView == null) {
             try {
                 profileView = FXMLLoader.load(getClass().getResource("profile-view.fxml"));

@@ -29,7 +29,7 @@ public class StudentViewController implements Initializable {
             switch (newValue) {
                 case ViewFactory.PROFILE_VIEW -> {
                     dropLast();
-                    dad.getChildren().add(ViewFactory.getInstance().getProfileView());
+                    dad.getChildren().add(ViewFactory.getInstance().getProfileView(true));
                     hasAPaneOn = true;
                 }
                 case ViewFactory.CHANGE_PASSWORD_VIEW -> {

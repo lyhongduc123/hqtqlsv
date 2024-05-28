@@ -49,6 +49,7 @@ public class AccountActivity {
                     System.err.println("cant init user");
                     return LOGIN_FAILED;
                 }
+                System.out.println(User.getInstance().getClass().getSimpleName());
                 return LOGIN_SUCCESS;
             }
             stmt.close();
@@ -131,5 +132,25 @@ public class AccountActivity {
 
     public static void logOut() {
         User.getInstance().logOut();
+    }
+
+    public static boolean deleteStudent(String mssv) {
+        Statement stmt;
+        try {
+            stmt = DBConnection.getConnection().createStatement();
+            String query = "DELETE FROM sinh_vien WHERE mssv = \'" + mssv + "\';";
+            stmt.executeUpdate(query);
+            query = "DELETE FROM users WHERE username = \'" + mssv + "\';";
+            stmt.executeUpdate(query);
+            stmt.close();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return false;
+    }
+
+    public static boolean addStudent(Student student) {
+        return false;
     }
 }

@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -125,5 +126,16 @@ public class TimSinhVienView implements Initializable {
             StudentForShow.setStudent(student);
             ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.PROFILE_VIEW);
         }
+    }
+
+    @FXML
+    public void addSv() {
+        //AccountActivity.addStudent()
+    }
+
+    @FXML
+    public void deleteSv() {
+        String mssv = table.getSelectionModel().getSelectedItem().getMssv();
+        AccountActivity.deleteStudent(mssv);
     }
 }

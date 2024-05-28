@@ -51,5 +51,7 @@
       </GridPane>
       <Button layoutX="320.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#xem" text="Xem" />
       <Label fx:id="numRes" layoutX="422.0" layoutY="155.0" text="Có 0 kết quả." />
+      <Button layoutX="422.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#addSv" text="Thêm" />
+      <Button layoutX="540.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#deleteSv" text="Xóa" />
    </children>
 </AnchorPane>

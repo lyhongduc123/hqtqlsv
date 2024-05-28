@@ -40,17 +40,9 @@ public class StudentProfileView implements Initializable {
     @FXML
     private DatePicker ngaySinh;
 
-
-    //TODO cho phép admin sửa thông tin, student thì không.
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        hoVaTen.setText(StudentForShow.getStudent().getHoVaTen());
-        queQuan.setText(StudentForShow.getStudent().getQueQuan());
-        sex.setText(StudentForShow.getStudent().isMale()? "Nam" : "Nữ");
-        mssv.setText(StudentForShow.getStudent().getMssv());
-        lop.setText(StudentForShow.getStudent().getTen_lop_fk());
-        ngaySinh.setValue(StudentForShow.getStudent().getNgaySinh().toLocalDate());
-        email.setText(StudentForShow.getStudent().getEmail());
+        reset();
     }
 
     @FXML
@@ -60,8 +52,26 @@ public class StudentProfileView implements Initializable {
     }
 
     public void back(String previousState) {
-        Pane parent = (Pane) ViewFactory.getInstance().getProfileView().getParent();
-        parent.getChildren().remove(ViewFactory.getInstance().getProfileView());
+        reset();
+        Pane parent = (Pane) ViewFactory.getInstance().getProfileView(false).getParent();
+        parent.getChildren().remove(ViewFactory.getInstance().getProfileView(false));
         ViewFactory.getInstance().getCurrentSelection().set(previousState);
+    }
+
+    public void reset() {
+        hoVaTen.setText(StudentForShow.getStudent().getHoVaTen());
+        queQuan.setText(StudentForShow.getStudent().getQueQuan());
+        sex.setText(StudentForShow.getStudent().isMale()? "Nam" : "Nữ");
+        mssv.setText(StudentForShow.getStudent().getMssv());
+        lop.setText(StudentForShow.getStudent().getTen_lop_fk());
+        ngaySinh.setValue(StudentForShow.getStudent().getNgaySinh().toLocalDate());
+        email.setText(StudentForShow.getStudent().getEmail());
+
+        hoVaTen.setDisable(User.getInstance() instanceof Student);
+        lop.setDisable(User.getInstance() instanceof Student);
+        queQuan.setDisable(User.getInstance() instanceof Student);
+        ngaySinh.setDisable(User.getInstance() instanceof Student);
+        sex.setDisable(User.getInstance() instanceof Student);
+        mssv.setDisable(User.getInstance() instanceof Student);
     }
 }
