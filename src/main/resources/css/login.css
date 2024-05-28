@@ -1,0 +1,41 @@
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+/* Định dạng cho TextField */
+.text-field {
+    -fx-font-size: 14px;
+    -fx-pref-width: 200px;
+}
+
+/* Định dạng cho PasswordField */
+.password-field {
+    -fx-font-size: 14px;
+    -fx-pref-width: 200px;
+}
+
+/* Định dạng cho Button */
+.button {
+    -fx-font-size: 14px;
+    -fx-pref-width: 100px;
+    -fx-background-color: #4CAF50; /* Màu nền */
+    -fx-text-fill: white; /* Màu chữ */
+}
+
+/* Định dạng cho Button khi rê chuột vào */
+.button:hover {
+    -fx-background-color: #45a049; /* Màu nền khi hover */
+}
+
+.big-title {
+    -fx-font-size: 24px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+.medium-title {
+    -fx-font-size: 18px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
