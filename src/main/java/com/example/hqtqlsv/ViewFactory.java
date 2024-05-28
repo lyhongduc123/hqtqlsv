@@ -1,6 +1,5 @@
 package com.example.hqtqlsv;
 
-import com.example.hqtqlsv.Controller.student.StudentProfileView;
 import com.example.hqtqlsv.Model.Admin;
 import com.example.hqtqlsv.Model.Student;
 import com.example.hqtqlsv.Model.User;
@@ -14,8 +13,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ViewFactory {
+
     private static ViewFactory instance;
     private final StringProperty currentSelection;
+    public static final String INSERT_VIEW = "insertView";
     public static final String PROFILE_VIEW = "profileView";
     public static final String TIM_SINH_VIEN = "timSinhVien";
     public static final String CHANGE_PASSWORD_VIEW = "changePassword";
@@ -24,6 +25,7 @@ public class ViewFactory {
     private AnchorPane profileView;
     private AnchorPane timSinhVien;
     private AnchorPane changePasswordView;
+    private AnchorPane insertView;
 
     private ViewFactory() {
         stage.setResizable(false);
@@ -114,5 +116,17 @@ public class ViewFactory {
             }
         }
         return timSinhVien;
+    }
+
+    public AnchorPane getInsertView() {
+        insertView = null;
+        try {
+            insertView = FXMLLoader.load(getClass().getResource("profile-view_insert.fxml"));
+            AnchorPane.setBottomAnchor(insertView, 0.0);
+            AnchorPane.setRightAnchor(insertView, 0.0);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return insertView;
     }
 }

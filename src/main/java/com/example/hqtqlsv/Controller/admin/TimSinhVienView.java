@@ -130,7 +130,7 @@ public class TimSinhVienView implements Initializable {
 
     @FXML
     public void addSv() {
-        //AccountActivity.addStudent()
+        ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.INSERT_VIEW);
     }
 
     @FXML

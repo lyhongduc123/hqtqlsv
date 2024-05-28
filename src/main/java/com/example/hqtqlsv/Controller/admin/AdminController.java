@@ -30,6 +30,11 @@ public class AdminController implements Initializable {
                     dad.getChildren().add(ViewFactory.getInstance().getProfileView(true));
                     hasAPaneOn = true;
                 }
+                case ViewFactory.INSERT_VIEW -> {
+                    ViewFactory.getInstance().getTimSinhVien().setVisible(false);
+                    dad.getChildren().add(ViewFactory.getInstance().getInsertView());
+                    hasAPaneOn = true;
+                }
                 case ViewFactory.MAIN_VIEW -> hasAPaneOn = false;
             }
         });

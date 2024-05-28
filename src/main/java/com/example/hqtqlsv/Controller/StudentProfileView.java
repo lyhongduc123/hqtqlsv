@@ -1,4 +1,4 @@
-package com.example.hqtqlsv.Controller.student;
+package com.example.hqtqlsv.Controller;
 
 import com.example.hqtqlsv.Model.Admin;
 import com.example.hqtqlsv.Model.Student;
@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class StudentProfileView implements Initializable {
     @FXML
-    private Button changePw;
+    private Button insertBtn;
 
     @FXML
     private TextField email;
