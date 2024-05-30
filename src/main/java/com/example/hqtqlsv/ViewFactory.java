@@ -26,6 +26,7 @@ public class ViewFactory {
     private AnchorPane timSinhVien;
     private AnchorPane changePasswordView;
     private AnchorPane insertView;
+    private AnchorPane changeView;
 
     private ViewFactory() {
         stage.setResizable(false);
@@ -118,15 +119,31 @@ public class ViewFactory {
         return timSinhVien;
     }
 
-    public AnchorPane getInsertView() {
-        insertView = null;
-        try {
-            insertView = FXMLLoader.load(getClass().getResource("profile-view_insert.fxml"));
-            AnchorPane.setBottomAnchor(insertView, 0.0);
-            AnchorPane.setRightAnchor(insertView, 0.0);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    public AnchorPane getInsertView(boolean reset) {
+        if (reset) insertView = null;
+        if (insertView == null) {
+            try {
+                insertView = FXMLLoader.load(getClass().getResource("profile-view-insert.fxml"));
+                AnchorPane.setBottomAnchor(insertView, 0.0);
+                AnchorPane.setRightAnchor(insertView, 0.0);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         return insertView;
+    }
+
+    public AnchorPane getChangeView(boolean reset) {
+        if (reset) insertView = null;
+        if (changeView == null) {
+            try {
+                changeView = FXMLLoader.load(getClass().getResource("profile-view-change.fxml"));
+                AnchorPane.setBottomAnchor(changeView, 0.0);
+                AnchorPane.setRightAnchor(changeView, 0.0);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return changeView;
     }
 }

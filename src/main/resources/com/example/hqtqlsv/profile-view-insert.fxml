@@ -36,7 +36,7 @@
             <TextField fx:id="mssv" GridPane.columnIndex="1" />
             <Label text="Email:" GridPane.rowIndex="7" />
             <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <TextField fx:id="sex" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="sex" promptText="Nam/Nữ" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="Lop:" GridPane.rowIndex="6" />
             <TextField fx:id="lop" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Label text="Ngay sinh:" GridPane.rowIndex="4" />

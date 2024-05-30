@@ -1,4 +1,4 @@
-package com.example.hqtqlsv.Controller;
+package com.example.hqtqlsv.Controller.admin;
 
 import com.example.hqtqlsv.Model.Admin;
 import com.example.hqtqlsv.Model.Student;
@@ -15,7 +15,7 @@ import javafx.scene.layout.Pane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class StudentProfileView implements Initializable {
+public class StudentProfileViewChange implements Initializable {
     @FXML
     private Button insertBtn;
 
@@ -53,8 +53,8 @@ public class StudentProfileView implements Initializable {
 
     public void back(String previousState) {
         reset();
-        Pane parent = (Pane) ViewFactory.getInstance().getProfileView(false).getParent();
-        parent.getChildren().remove(ViewFactory.getInstance().getProfileView(false));
+        Pane parent = (Pane) ViewFactory.getInstance().getChangeView(false).getParent();
+        parent.getChildren().remove(ViewFactory.getInstance().getChangeView(false));
         ViewFactory.getInstance().getCurrentSelection().set(previousState);
     }
 

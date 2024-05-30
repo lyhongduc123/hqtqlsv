@@ -27,12 +27,17 @@ public class AdminController implements Initializable {
                 }
                 case ViewFactory.PROFILE_VIEW -> {
                     ViewFactory.getInstance().getTimSinhVien().setVisible(false);
-                    dad.getChildren().add(ViewFactory.getInstance().getProfileView(true));
+                    dad.getChildren().add(ViewFactory.getInstance().getChangeView(false));
                     hasAPaneOn = true;
                 }
                 case ViewFactory.INSERT_VIEW -> {
                     ViewFactory.getInstance().getTimSinhVien().setVisible(false);
-                    dad.getChildren().add(ViewFactory.getInstance().getInsertView());
+                    dad.getChildren().add(ViewFactory.getInstance().getInsertView(true));
+                    hasAPaneOn = true;
+                }
+                case ViewFactory.CHANGE_PASSWORD_VIEW -> {
+                    dropLast();
+                    dad.getChildren().add(ViewFactory.getInstance().getChangePasswordView());
                     hasAPaneOn = true;
                 }
                 case ViewFactory.MAIN_VIEW -> hasAPaneOn = false;
@@ -53,5 +58,9 @@ public class AdminController implements Initializable {
     public void logOut() {
         AccountActivity.logOut();
         ViewFactory.getInstance().showLoginView();
+    }
+
+    public void changePw() {
+        ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.CHANGE_PASSWORD_VIEW);
     }
 }

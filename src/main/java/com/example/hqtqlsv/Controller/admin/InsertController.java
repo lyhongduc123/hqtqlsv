@@ -42,8 +42,8 @@ public class InsertController {
 
     @FXML
     void back() {
-        Pane parent = (Pane) ViewFactory.getInstance().getProfileView(false).getParent();
-        parent.getChildren().remove(ViewFactory.getInstance().getInsertView());
+        Pane parent = (Pane) ViewFactory.getInstance().getInsertView(false).getParent();
+        parent.getChildren().remove(ViewFactory.getInstance().getInsertView(false));
         ViewFactory.getInstance().getCurrentSelection().set(ViewFactory.TIM_SINH_VIEN);
     }
 

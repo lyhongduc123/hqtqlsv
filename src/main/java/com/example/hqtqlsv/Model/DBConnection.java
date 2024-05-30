@@ -2,6 +2,8 @@ package com.example.hqtqlsv.Model;
 
 import java.sql.*;
 public class DBConnection {
+    private static Connection slave;
+    private static Connection master;
     private static Connection connection;
 
     private DBConnection() {}
@@ -22,6 +24,18 @@ public class DBConnection {
 
     public synchronized static Connection getConnection() {
         return connection;
+    }
+
+    public synchronized static Connection getConnection(String type) {
+        if (type.toUpperCase().equals("MASTER")) {
+            return master;
+        } else if (type.toUpperCase().equals("SLAVE")) {
+            return slave;
+        }
+        else {
+            System.err.println("Unknown type: " + type);
+            return null;
+        }
     }
 
     public static void main(String[] args) {
